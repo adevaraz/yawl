@@ -12,15 +12,15 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="number" type="xs:nonNegativeInteger"/>
-	<xs:element name="complexNum" substitutionGroup="number">
+	<!--xs:element name="complexNum" substitutionGroup="number">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="unitTnhse" type="xs:nonNegativeInteger"/>
 				<xs:element ref="streetNumber"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>
-	<xs:element name="businessNumber" substitutionGroup="number">
+	</xs:element-->
+	<!--xs:element name="businessNumber" substitutionGroup="number">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="floor" type="xs:nonNegativeInteger"/>
@@ -28,9 +28,9 @@
 				<xs:element ref="streetNumber"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>
+	</xs:element-->
 	<xs:element name="streetNumber" type="xs:nonNegativeInteger"/>
-	<xs:element name="gpoBoxAddress" substitutionGroup="address">
+	<!--xs:element name="gpoBoxAddress" substitutionGroup="address">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="number" type="xs:nonNegativeInteger"/>
@@ -39,7 +39,7 @@
 				<xs:element ref="state" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>
+	</xs:element-->
 	<xs:element name="postCode">
 		<xs:simpleType>
 			<xs:restriction base="xs:nonNegativeInteger">

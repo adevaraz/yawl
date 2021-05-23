@@ -2628,6 +2628,7 @@
         <unzip dest="${enumeratedClasses}">
             <fileset dir="${lib.dir}" includes="${commonsCodec}"/>
         </unzip>
+        <mkdir dir="${temp.dir}/${proclet.app.name}${webinf.dir}/${proclet.app.name}/editor" />
         <jar destfile="${temp.dir}/${proclet.app.name}${webinf.dir}/${proclet.app.name}/editor/procletEditor.jar"
              basedir="${classes.dir}"
              includes="org/yawlfoundation/yawl/procletService/**/*
@@ -2868,6 +2869,20 @@
                      deployDocStore,
                      deployProcletService,
                      deployNonCoreSharedLibs">
+    </target>
+
+    <target name="deployWebappsWithoutTest"
+        description="Build and deploy all web apps"
+        depends="deployCoreWebapps,
+        deployMonitorService,
+        deployDigitalSignature,
+        deployMailSender,
+        deployCostService,
+        deployTwitterService,
+        deploySchedulingService,
+        deployDocStore,
+        deployProcletService,
+        deployNonCoreSharedLibs">
     </target>
 
     <target name="deployCoreWebapps"

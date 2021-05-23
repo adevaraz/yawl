@@ -447,9 +447,9 @@ public class adminQueues extends AbstractPageBean {
         tabUnOffered.setStyle("");
         tabWorklisted.setStyle("");
         if (selected != null) selected.setStyle("color: #3277ba");
-        tabUnOffered.setText(String.format("Unoffered (%d)",
+        tabUnOffered.setText(String.format("Nicht zugewiesen (%d)",
                      _sb.getQueueSize(WorkQueue.UNOFFERED)));
-        tabWorklisted.setText(String.format("Worklisted (%d)",
+        tabWorklisted.setText(String.format("in der Worklist (%d)",
                      _sb.getQueueSize(WorkQueue.WORKLISTED)));
     }
 
