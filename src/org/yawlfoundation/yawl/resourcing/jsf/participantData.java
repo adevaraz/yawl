@@ -179,7 +179,16 @@ public class participantData extends AbstractPageBean {
     public Label getLblLastName() { return lblLastName; }
 
     public void setLblLastName(Label l) { lblLastName = l; }
+    
+    /***BARU***/
+    
+    private Label lblAddress = new Label();
 
+    public Label getLblAddress() { return lblAddress; }
+
+    public void setLblAddress(Label l) { lblAddress = l; }
+    
+    /**********/
     
     private Label lblDesc = new Label();
 
@@ -284,14 +293,22 @@ public class participantData extends AbstractPageBean {
     public TextField getTxtUserID() { return txtUserID; }
 
     public void setTxtUserID(TextField tf) { txtUserID = tf; }
+    
+    /****************** BARU DITAMBAHIN ******************/
+    
+    private TextField txtAddress = new TextField();
 
+    public TextField getTxtAddress() { return txtAddress; }
 
+    public void setTxtAddress(TextField tf) { txtAddress = tf; }
+
+    /****************************************************/
+    
     private Checkbox cbxAdmin = new Checkbox();
 
     public Checkbox getCbxAdmin() { return cbxAdmin; }
 
     public void setCbxAdmin(Checkbox c) { cbxAdmin = c; }
-
 
     private TextArea txtDesc = new TextArea();
 
@@ -651,6 +668,9 @@ public class participantData extends AbstractPageBean {
         txtFirstName.setText(p.getFirstName());
         txtLastName.setText(p.getLastName());
         txtUserID.setText(p.getUserID());
+        /*****BARU******/
+        txtAddress.setText(p.getAddress());
+        /***********/
         txtDesc.setText(p.getDescription());
         txtNotes.setText(p.getNotes());
         cbxAdmin.setValue(p.isAdministrator());
@@ -681,6 +701,7 @@ public class participantData extends AbstractPageBean {
         txtFirstName.setText("");
         txtLastName.setText("");
         txtUserID.setText("");
+        txtAddress.setText("");
         txtDesc.setText("");
         txtNotes.setText("");
         cbxAdmin.setValue("");
@@ -710,6 +731,8 @@ public class participantData extends AbstractPageBean {
             txtFirstName.setDisabled(!enabled);
             txtLastName.setDisabled(!enabled);
             txtUserID.setDisabled(!enabled);
+            txtAddress.setDisabled(!enabled);
+            
             txtDesc.setDisabled(!enabled);
             txtNotes.setDisabled(!enabled);
             cbxAdmin.setDisabled(!enabled);
@@ -740,6 +763,7 @@ public class participantData extends AbstractPageBean {
         p.setFirstName(_sb.stripXMLChars((String) txtFirstName.getText()));
         p.setLastName(_sb.stripXMLChars((String) txtLastName.getText()));
         p.setUserID(_sb.stripXMLChars((String) txtUserID.getText()));
+        p.setAddress(_sb.stripXMLChars((String) txtAddress.getText()));
         p.setDescription(_sb.stripXMLChars((String) txtDesc.getText()));
         p.setNotes(_sb.stripXMLChars((String) txtNotes.getText()));
         p.setAdministrator((Boolean) cbxAdmin.getValue());

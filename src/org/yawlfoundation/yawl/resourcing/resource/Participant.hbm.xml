@@ -62,6 +62,11 @@
                   column="FirstName"
                   type="string"
                   access="field"/>
+                  
+        <property name="_address"
+                  column="Address"
+                  type="string"
+                  access="field"/>
 
         <property name="_userID"
                   column="UserID"

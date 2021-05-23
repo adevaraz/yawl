@@ -44,6 +44,7 @@ public class Participant extends AbstractResource implements Cloneable {
     private String _lastname ;
     private String _firstname ;
     private String _userID ;
+    private String _address;
     private String _password ;
     private boolean _isAdministrator;
     private Set<Position> _positions = new HashSet<Position>();
@@ -175,6 +176,11 @@ public class Participant extends AbstractResource implements Cloneable {
         return String.format( "%s %s", _firstname, _lastname);
     }
 
+    public String getAddress() { return _address ; }
+
+    public void setAddress(String address) {
+        _address = address ;
+    }
 
     public String getUserID() { return _userID; }
 
