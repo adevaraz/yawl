@@ -68,6 +68,11 @@
                   type="string"
                   access="field"/>
 
+        <property name="_postalCode"
+                  column="PostalCode"
+                  type="string"
+                  access="field"/>
+
         <property name="_userID"
                   column="UserID"
                   unique="true"

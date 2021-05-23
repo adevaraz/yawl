@@ -144,7 +144,7 @@
                         <ui:panelLayout binding="#{participantData.pnlUserDetails}"
                                         id="pnlUserDetails"
                                         styleClass="orgDataPanel"
-                                        style="position: absolute; height: 329px; top: 40px; left: 0">
+                                        style="position: absolute; height: 365px; top: 40px; left: 0">
 
                             <ui:label binding="#{participantData.lblFirstName}"
                                       for="txtFirstName"
@@ -163,23 +163,29 @@
                                       id="lblAddress"
                                       style="left: 12px; top: 84px; position: absolute"
                                       text="Address:"/>
+                                      
+                            <ui:label binding="#{participantData.lblPostalCode}"
+                                      for="txtPostalCode"
+                                      id="lblPostalCode"
+                                      style="left: 12px; top: 120px; position: absolute"
+                                      text="Postal Code:"/>
 
                             <ui:label binding="#{participantData.lblUserID}"
                                       for="txtUserID"
                                       id="lblUserID"
-                                      style="left: 12px; top: 120px; position: absolute"
+                                      style="left: 12px; top: 156px; position: absolute"
                                       text="User ID:"/>
 
                             <ui:label binding="#{participantData.lblDesc}"
                                       for="txtDesc"
                                       id="lblDesc"
-                                      style="left: 12px; top: 162px; position: absolute"
+                                      style="left: 12px; top: 198px; position: absolute"
                                       text="Description:"/>
 
                             <ui:label binding="#{participantData.lblNotes}"
                                       for="txtNotes"
                                       id="lblNotes"
-                                      style="left: 12px; top: 246px; position: absolute"
+                                      style="left: 12px; top: 282px; position: absolute"
                                       text="Notes:"/>
 
                             <ui:textField binding="#{participantData.txtFirstName}"
@@ -196,32 +202,37 @@
                                           id="txtAddress"
                                           onKeyPress="return disableEnterKey(event);"
                                           style="left: 100px; top: 84px; width: 280px; position: absolute"/>
+                            
+                            <ui:textField binding="#{participantData.txtPostalCode}"
+                                          id="txtPostalCode"
+                                          onKeyPress="return disableEnterKey(event);"
+                                          style="left: 100px; top: 120px; width: 280px; position: absolute"/>
 
                             <ui:textField binding="#{participantData.txtUserID}"
                                           id="txtUserID"
                                           onKeyPress="return disableEnterKey(event);"
-                                          style="left: 100px; top: 120px; width: 150px; position: absolute"/>
+                                          style="left: 100px; top: 156px; width: 150px; position: absolute"/>
 
                             <ui:checkbox binding="#{participantData.cbxAdmin}"
                                          id="cbxAdmin"
                                          label="Administrator"
                                          labelLevel="2"
-                                         style="left: 270px; top: 120px; position: absolute"/>
+                                         style="left: 270px; top: 156px; position: absolute"/>
 
                             <ui:textArea binding="#{participantData.txtDesc}"
                                          id="txtDesc"
-                                         style="left: 100px; top: 162px; width: 285px; height: 60px; position: absolute"/>
+                                         style="left: 100px; top: 198px; width: 285px; height: 60px; position: absolute"/>
 
                             <ui:textArea binding="#{participantData.txtNotes}"
                                          id="txtNotes"
-                                         style="left: 100px; top: 246px; width: 285px; height: 60px; position: absolute"/>
+                                         style="left: 100px; top: 282px; width: 285px; height: 60px; position: absolute"/>
                         </ui:panelLayout>
 
 
                         <ui:tabSet binding="#{participantData.tabSetAttributes}"
                                    id="tabSetAttributes"
                                    selected="tabRoles"
-                                   style="border: 2px solid gray; height: 200px; top: 375px; left: 0; position: absolute; width: 406px">
+                                   style="border: 2px solid gray; height: 200px; top: 411px; left: 0; position: absolute; width: 406px">
 
                             <ui:tab binding="#{participantData.tabRoles}"
                                     action="#{participantData.tabRoles_action}"
