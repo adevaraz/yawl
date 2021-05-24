@@ -877,6 +877,14 @@ public class participantData extends AbstractPageBean {
             msgPanel.error("A userid is required.");
             result = false;
         }
+        if (! hasText(txtAddress)) {
+            msgPanel.error("An address is required.");
+            result = false;
+        }
+        if (! hasText(txtPostalCode)) {
+            msgPanel.error("A postal code is required.");
+            result = false;
+        }
         if (! hasText(txtNewPassword)) {
             msgPanel.error("A password is required.");
             result = false;

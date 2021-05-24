@@ -74,25 +74,32 @@ public class Participant extends AbstractResource implements Cloneable {
         _resourceID = id ;
     }
 
-    public Participant(String lastName, String firstName, String userID) {
+    public Participant(String lastName, String firstName, String userID,
+    					String address, String postalCode) {
         super();
         setUserID(userID) ;
         _lastname = lastName ;
         _firstname = firstName ;
+        _address = address;
+        _postalCode = postalCode;
     }
 
-    public Participant(String lastName, String firstName, String userid, boolean persist) {
-        this(lastName, firstName, userid) ;
+    public Participant(String lastName, String firstName, String userid, 
+    					boolean persist, String address, String postalCode) {
+        this(lastName, firstName, userid, address, postalCode) ;
         _persisting = persist ;
     }
 
     public Participant(String lastname, String firstname, String userID,
-                       boolean isAdministrator, Set<Position> positions,
-                       Set<Role> roles, Set<Capability> capabilities) {
+    					String address, String postalCode,
+    					boolean isAdministrator, Set<Position> positions,
+    					Set<Role> roles, Set<Capability> capabilities) {
         this(true) ;
         _lastname = lastname;
         _firstname = firstname;
         setUserID(userID) ;
+        _address = address;
+        _postalCode = postalCode;
         _isAdministrator = isAdministrator;
         _positions = positions;
         _roles = roles;

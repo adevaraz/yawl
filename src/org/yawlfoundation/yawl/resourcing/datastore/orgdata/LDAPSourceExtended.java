@@ -304,6 +304,8 @@ public class LDAPSourceExtended extends DataSource {
         // Must attributes
         String firstName = getAttributeAsString(attr, ATTR_GIVENNAME);
         String lastName = getAttributeAsString(attr, ATTR_SURNAME);
+        String address = getAttributeAsString(attr, ATTR_ADDRESS);
+        String postalCode = getAttributeAsString(attr, ATTR_POSTALCODE);
         String uid = getAttributeAsString(attr, ATTR_UID);
         
         // May attributes
@@ -320,7 +322,7 @@ public class LDAPSourceExtended extends DataSource {
         Boolean canChainExecution = getAttributeAsBoolean(attr, ATTR_PRIVILEGE_CAN_CHAIN_EXECUTION);
         Boolean canManageCases = getAttributeAsBoolean(attr, ATTR_PRIVILEGE_CAN_MANAGE_CASES);
         
-        Participant participant = new Participant(lastName, firstName, uid);
+        Participant participant = new Participant(lastName, firstName, uid, address, postalCode);
         if (isNotNullOrEmpty(yawlInternalId)) {
             participant.setID(yawlInternalId);
         } else {

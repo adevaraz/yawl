@@ -45,6 +45,8 @@ class LDAPConstants {
     static final String ATTR_COMMON_NAME = "cn";
     static final String ATTR_SURNAME = "sn";
     static final String ATTR_GIVENNAME = "givenName";
+    static final String ATTR_ADDRESS = "address";
+    static final String ATTR_POSTALCODE = "12345";
     static final String ATTR_DISPLAYNAME = "displayName";
     static final String ATTR_DESCRIPTION = "description";
     static final String ATTR_UNIQUE_MEMBER = "uniqueMember";

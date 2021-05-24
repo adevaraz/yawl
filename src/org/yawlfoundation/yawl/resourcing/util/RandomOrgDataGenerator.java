@@ -49,6 +49,13 @@ public class RandomOrgDataGenerator {
                           "Thomson", "Ulrich", "Van Dyke", "Wilson", "Xerxes",
                           "Young", "Zappa"};
 
+    private String[] a = {"Germany", "Russia", "Indonesia", "Istanbul", "Turkey", "China", "United States",
+				            "Vietnam", "Thailand", "UAE", "Japan", "South Korea", "Morroco",
+				            "Denmark", "New Zealand", "Australia", "Laos", "South Africa", "Aljazair",
+				            "Colombia", "Irak", "Iran", "Filipina", "Brunei",
+				            "Norwegia", "Portugal"};
+    
+
     public RandomOrgDataGenerator() {}
 
     public void generate(int count) {
@@ -195,7 +202,7 @@ public class RandomOrgDataGenerator {
                                     Position[] positions, Capability[] capabilities) {
         List<String> addedUsers = new ArrayList<String>();
         boolean unique;
-        String last = "", first = "", user = "";
+        String last = "", first = "", user = "", address = "", postalCode = "0000";
         Random rand = new Random();
 
         for (int i = 0; i < howManyToCreate; i++) {
@@ -205,6 +212,7 @@ public class RandomOrgDataGenerator {
             while (! unique) {
                 first = f[rand.nextInt(26)];
                 last = l[rand.nextInt(26)];
+                address = a[rand.nextInt(26)];
                 user = last + first.substring(0, 1);
                 if (! addedUsers.contains(user)) {
                     addedUsers.add(user);
@@ -212,7 +220,7 @@ public class RandomOrgDataGenerator {
                 }
             }
 
-            Participant p = new Participant(last, first, user, true);
+            Participant p = new Participant(last, first, user, true, address, postalCode);
 
             p.setAdministrator(rand.nextBoolean());
             p.setPassword(PasswordEncryptor.encrypt("apple", "apple"));

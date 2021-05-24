@@ -288,9 +288,11 @@ public class LDAPSource extends DataSource {
         Participant p = null;
         String lastname = getStringValue(attributes, "lastname");
         String firstname = getStringValue(attributes, "firstname");
+        String address = getStringValue(attributes, "address");
+        String postalcode = getStringValue(attributes, "postalcode");
         String userid = getStringValue(attributes, "userid");
         if (allNotNullOrEmpty(lastname, firstname, userid)) {
-            p = new Participant(lastname, firstname, userid);
+            p = new Participant(lastname, firstname, userid, address, postalcode);
             p.setID("U_" + userid);
 
             // if authentication is done via LDAP, keep the LDAP name - userid mapping
